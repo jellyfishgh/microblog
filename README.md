@@ -1,18 +1,30 @@
 # microblog
 blog powered by express
 
-# session
+## session
 
-# cookie
+## cookie
 
+> ajax + cookie -> session
 ```
-http://blog.modulus.io/nodejs-and-express-sessions
-http://www.cnblogs.com/lgphp/p/3913077.html
-https://cnodejs.org/topic/508a952165e98a9809b8ddd8
-https://cnodejs.org/topic/516b71536d3827730641ca93
+https://segmentfault.com/a/1190000004322487#articleHeader13
 https://github.com/expressjs/session
 https://github.com/alsotang/node-lessons/tree/master/lesson16
 http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html
-https://segmentfault.com/a/1190000004556040
-https://www.zhihu.com/question/19786827
 ```
+
+## product
+
+### 即时通讯：文本，图片，录音，视频，文件，即时语音，视频直播
+
+#### websocket
+
+#### webrtc
+
+### localStorage
+
+### 博客编辑
+
+#### mongodb
+
+#### markdown.js
