@@ -7,7 +7,6 @@ blog powered by express
 
 > ajax + cookie -> session
 ```
-https://segmentfault.com/a/1190000004322487#articleHeader13
 https://github.com/expressjs/session
 https://github.com/alsotang/node-lessons/tree/master/lesson16
 http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html
