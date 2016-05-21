@@ -9,7 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next){
-    console.log(req.username);
+    var body = req.body;
+    var username = body.username,
+        password = body.password;
+    console.log(username, password);
+    res.end('success');        
 });
 
 module.exports = router;
