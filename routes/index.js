@@ -6,15 +6,13 @@ router.get('/', indexHandler);
 router.get('/index', indexHandler);
 
 function indexHandler(req, res, next) {
-    if (req.session.lastPage) {
-        console.log('session:index');
-        res.send('lastPage: ' + req.session.lastPage);
-    } else {
-        req.session.lastPage = '/index';
+    if (req.session.logined) {
         res.render('index', {
             title: 'Express',
-            links: ['index', 'users']
+            links: ['index']
         });
+    } else {
+        res.redirect('../login');
     }
 }
 

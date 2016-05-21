@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/login.css')
+    div.login
+        form#loginForm
+            p
+                label(for='username') 用户名：
+                input#username.username(type='text' placeholder='请输入你的用户名' name='username' autofocus)
+            p
+                label(for='pwd') 密码：
+                input#password.password(type='password' name='password' placeholder='请输入你的密码')
+        p
+            button#login.login 登录
+            button#register.register 注册
+    script(src='/lib/requirejs.min.js' data-main='/javascripts/login')

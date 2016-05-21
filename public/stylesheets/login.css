@@ -1,0 +1,26 @@
+.login{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-right: -50%;
+    width: 30%;
+    min-width: 300px;
+    max-width: 600px;
+    background: yellow;
+}
+
+.username, .password{
+    position: absolute;
+    left: 30%;
+    width: 60%;
+}
+
+.login{
+    width: 20%;
+    margin-left: 30%;
+}
+.register{
+    width: 20%;
+    margin-left: 20%;
+}
