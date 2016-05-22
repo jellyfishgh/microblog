@@ -1,4 +1,4 @@
-.loginDiv{
+.wrapper{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -23,4 +23,8 @@
 .register{
     width: 20%;
     margin-left: 20%;
+}
+
+#registerDiv{
+    display: none;
 }
