@@ -34,7 +34,7 @@ define(function() {
                             alert('登录成功');
                             break;
                         case '1':
-                            aler('帐号不存在,请注册后使用');
+                            alert('帐号不存在,请注册后使用');
                             break;
                         case '2':
                             alert('帐号或密码不正确');
@@ -79,7 +79,7 @@ define(function() {
                             $('#loginDiv').show(500);
                             break;
                         case '1':
-                            aler('帐号已存在，请重新输入帐号');
+                            alert('帐号已存在，请重新输入帐号');
                             $('regusername').focus();
                     }
                 }

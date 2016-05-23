@@ -17,12 +17,12 @@ router.post('/', function(req, res, next){
         var sql = 'select password from users where username = "' + username + '"';
         connection.query(sql, function(err, rows){
             if(err) throw err;
-            console.log(rows);
-            if(rows.length === 0)res.end(1);
+            console.log(rows[0]);
+            if(rows.length === 0) res.end('1');
             else {
-                var pwd = rows[0][0];
-                if(pwd === password) res.end(0);
-                else res.end(2);
+                var pwd = rows[0].password;
+                if(pwd === password) res.end('0');
+                else res.end('2');
             }
             connection.release();
         });
