@@ -36,7 +36,8 @@ app.use(session({
         console.log(uid);
         return uid;
     },
-    secret: 'jellyfish'
+    secret: 'jellyfish',
+    cookie: {maxAge: 30*60*1000}
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 

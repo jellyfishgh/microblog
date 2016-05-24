@@ -7,9 +7,12 @@ router.get('/index', indexHandler);
 
 function indexHandler(req, res, next) {
     if (req.session.logined) {
-        res.render('index', {
-            title: 'Express',
-            links: ['index']
+        db.redisSelect('sql', function(username) {
+            res.render('index', {
+                title: 'Express',
+                username: username,
+                links: ['index']
+            });
         });
     } else {
         res.redirect('../login');

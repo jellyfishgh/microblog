@@ -3,7 +3,7 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/index.css')
     h1= title
-    p Welcome to #{title}
+    p Welcome #{username} to #{title}
     ul
         - for link in links
             li

@@ -31,7 +31,7 @@ define(function() {
                 success: function(data) {
                     switch (data) {
                         case '0':
-                            alert('登录成功');
+                            location.href = '/'
                             break;
                         case '1':
                             alert('帐号不存在,请注册后使用');

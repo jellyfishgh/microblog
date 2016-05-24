@@ -21,8 +21,12 @@ router.post('/', function(req, res, next){
             if(rows.length === 0) res.end('1');
             else {
                 var pwd = rows[0].password;
-                if(pwd === password) res.end('0');
-                else res.end('2');
+                if(pwd === password) {
+                    req.session.store.save({
+                        key:
+                    });
+                    res.end('0');
+                } else res.end('2');
             }
             connection.release();
         });
