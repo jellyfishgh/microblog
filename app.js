@@ -29,15 +29,19 @@ app.use(cookieParser());
 app.use(session({
     store: new RedisStore({
         host: "127.0.0.1",
-        port: 6379
+        port: 6379,
+        ttl: 30 * 24 * 60 * 60 // session 有效期 60 天
     }),
     genid: function(req) {
-        var uid = uuid.v1();
-        console.log(uid);
-        return uid;
+        return uuid.v1();
     },
     secret: 'jellyfish',
-    cookie: {maxAge: 30*60*1000}
+    cookie: {
+        maxAge: 30 * 60 * 1000,
+        httpOnly: true
+    },
+    resave: false,
+    saveUninitialized: false
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 

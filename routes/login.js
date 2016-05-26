@@ -22,10 +22,11 @@ router.post('/', function(req, res, next){
             else {
                 var pwd = rows[0].password;
                 if(pwd === password) {
-                    req.session.store.save({
-                        key:
+                    req.session.regenerate(function(){
+                        req.session.username = username;
+                        req.session.save();
+                        res.end('0');
                     });
-                    res.end('0');
                 } else res.end('2');
             }
             connection.release();

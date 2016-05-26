@@ -6,13 +6,11 @@ router.get('/', indexHandler);
 router.get('/index', indexHandler);
 
 function indexHandler(req, res, next) {
-    if (req.session.logined) {
-        db.redisSelect('sql', function(username) {
-            res.render('index', {
-                title: 'Express',
-                username: username,
-                links: ['index']
-            });
+    if (req.session.username) {
+        res.render('index', {
+            title: 'Express',
+            username: req.session.username,
+            links: ['index']
         });
     } else {
         res.redirect('../login');
