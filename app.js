@@ -11,6 +11,7 @@ var uuid = require('node-uuid');
 var routes = require('./routes/index');
 var login = require('./routes/login');
 var register = require('./routes/register');
+var personalCenter = require('./routes/personalCenter');
 
 var app = express();
 
@@ -37,7 +38,7 @@ app.use(session({
     },
     secret: 'jellyfish',
     cookie: {
-        maxAge: 30 * 60 * 1000,
+        maxAge: 30 * 60,//cookie 有效期 30 分钟
         httpOnly: true
     },
     resave: false,
@@ -48,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/login', login);
 app.use('/register', register);
+app.use('/personalCenter', personalCenter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

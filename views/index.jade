@@ -3,7 +3,8 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/index.css')
     h1= title
-    p Welcome #{username} to #{title}
+    p Welcome 
+        a(href='/personalCenter/#{username}') #{username} to #{title}
     ul
         - for link in links
             li
