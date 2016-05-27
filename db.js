@@ -1,4 +1,5 @@
 var mysql = require('mysql');
+var mongoose = require('mongoose');
 
 var pool = mysql.createPool({
     connectionLimit: 10,
@@ -9,4 +10,9 @@ var pool = mysql.createPool({
     database: 'microblog'
 });
 
-module.exports = pool;
+mongoose.connect('mongodb://localhost/microblog');
+
+module.exports = {
+    mysqlDB: pool,
+    mongoDB: mongoose.connection
+};

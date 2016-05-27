@@ -45,6 +45,13 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(function(err, req, res, next){
+   if(req.session.username){
+       next();
+   }else{
+       res.redirect('/login');
+   }
+});
 
 app.use('/', routes);
 app.use('/login', login);
