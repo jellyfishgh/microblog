@@ -8,8 +8,7 @@ var userSchema = new Schema({
     location: {
         province: String,
         city: String
-    },
-    blogs: [Schema.Types.Mixed]
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);
