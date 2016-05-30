@@ -17,7 +17,6 @@ router.post('/', function(req, res, next){
         var sql = 'select password from users where username = "' + username + '"';
         connection.query(sql, function(err, rows){
             if(err) throw err;
-            console.log(rows[0]);
             if(rows.length === 0) res.end('1');
             else {
                 var pwd = rows[0].password;
