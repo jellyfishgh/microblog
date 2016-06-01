@@ -10,25 +10,29 @@ router.get('/:username', function(req, res, next) {
         }, function(err, users) {
             if (err || users.length === 0) {
                 if (uname === req.session.username) {
-                    res.render('personalInfoReg', {
+                    res.render('personalInfoRegOfMe', {
                         title: uname + '需要完善个人信息',
                         name: uname
                     });
                 } else {
-
+                    res.render('personalInfoRegOfOther', {
+                        title: uname
+                    });
                 }
             } else {
                 if (uname === req.session.username) {
-                    res.render('personalCenter', {
+                    res.render('personalCenterOfMe', {
                         userInfo: users[0]
                     });
                 } else {
-
+                    res.render('personalCenterOfOther', {
+                        userInfo: users[0]
+                    });
                 }
             }
         });
     } else {
-        // 登录后仍然访问原来想要访问的url        
+        // 登录后仍然访问原来想要访问的url
         res.redirect('../login/:' + req.href);
     }
 });
