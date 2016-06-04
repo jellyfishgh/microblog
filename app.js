@@ -31,14 +31,14 @@ app.use(session({
     store: new RedisStore({
         host: "127.0.0.1",
         port: 6379,
-        ttl: 30 * 24 * 60 * 60 // session 有效期 60 天
+        ttl: 24 * 60 * 60 // session 有效期 1 天
     }),
     genid: function(req) {
         return uuid.v1();
     },
     secret: 'jellyfish',
     cookie: {
-        maxAge: 30 * 60, //cookie 有效期 30 分钟
+        // maxAge: 30 * 60, //cookie 有效期 30 分钟
         httpOnly: true
     },
     resave: false,

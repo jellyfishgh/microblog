@@ -4,19 +4,20 @@ var User = require('../schema/User');
 
 router.get('/:username', function(req, res, next) {
     if (req.session.username) {
-        var uname = req.username;
+        var uname = req.params.username;
         User.find({
             username: uname
         }, function(err, users) {
             if (err || users.length === 0) {
                 if (uname === req.session.username) {
                     res.render('personalInfoRegOfMe', {
-                        title: uname + '需要完善个人信息',
+                        title: uname + ' 需要完善个人信息',
                         name: uname
                     });
                 } else {
                     res.render('personalInfoRegOfOther', {
-                        title: uname
+                        title: uname,
+                        name: uname
                     });
                 }
             } else {
