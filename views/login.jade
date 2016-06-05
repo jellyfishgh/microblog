@@ -1,6 +1,7 @@
 extends layout
 
 block content
+    link(rel='stylesheet', href='/stylesheets/form.css')
     link(rel='stylesheet', href='/stylesheets/login.css')
     div#loginDiv.wrapper
         form#loginForm
@@ -26,4 +27,4 @@ block content
                 input#regpassword2.password(type='password' name='regpassword2' placeholder='请再次输入你的密码')
         p
             button#finish.finish 完成
-    script(src='/lib/requirejs.min.js' data-main='/javascripts/login')
+    script(src='/lib/requirejs.min.js' data-main='/javascripts/init')

@@ -12,7 +12,7 @@ router.get('/:username', function(req, res, next) {
                 if (uname === req.session.username) {
                     res.render('personalInfoRegOfMe', {
                         title: uname + ' 需要完善个人信息',
-                        name: uname
+                        username: uname
                     });
                 } else {
                     res.render('personalInfoRegOfOther', {
@@ -38,8 +38,19 @@ router.get('/:username', function(req, res, next) {
     }
 });
 
-router.post('/', function() {
-
+router.post('/', function(req, res, next) {
+    var body = req.body;
+    User.set({
+       username: body.username,
+       birthday: new Date(body.birthday),
+       sex: true,
+       location: {
+           province: '',
+           city: ''
+       } 
+    }, function(err){
+        
+    });
 });
 
 module.exports = router;
