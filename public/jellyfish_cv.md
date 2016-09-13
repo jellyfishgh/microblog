@@ -10,7 +10,7 @@
 
 GitHub：<https://github.com/jellyfishgh>
 
-<img src='http://7xq0r0.com1.z0.glb.clouddn.com/me1.jpg' style='width:129px;height:auto;position:absolute;right:240px;top:185px;'/>
+<img src='http://7xq0r0.com1.z0.glb.clouddn.com/me1.jpg' width='105' height='140' style='position:absolute;right:240px;top:185px;'/>
 
 ## 工作经历
 
@@ -54,10 +54,6 @@ eg：[神武2更新日志](<http://wzupdate.duoyi.com/sw_new.html>)
 - 熟悉 JSON，了解 protobuf；
 - 熟悉 MySQL，了解 Redis 和 MongoDB；
 - 熟悉 jQuery 和 Zepto，了解 Bootstrap；
-<!-- - 了解 MVC，MVVM 软件的架构思想，了解 React 和 Angular@1.x 前端数据绑定框架； -->
-<!-- - 了解负载均衡，缓存更新等分布式系统的设计思想和策略； -->
-<!-- - 了解性能优化等工程化的策略和使用工具； -->
-<!-- - 熟悉多线程编程，了解进程间的通信机制； -->
 - 熟练使用 Git 和 Linux(Ubuntu)；
 
 ## 个人说明
