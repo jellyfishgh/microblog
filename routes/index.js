@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', indexHandler);
 router.get('/index', indexHandler);
 
-function indexHandler(req, res, next) {
+function indexHandler(req, res) {
     if (req.session.username) {
         res.render('index', {
             title: 'Express',

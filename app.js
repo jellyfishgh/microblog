@@ -1,23 +1,25 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var RedisStore = require('connect-redis')(session);
-var bodyParser = require('body-parser');
-var uuid = require('node-uuid');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
+const bodyParser = require('body-parser');
+const uuid = require('node-uuid');
 
-var routes = require('./routes/index');
-var login = require('./routes/login');
-var register = require('./routes/register');
-var personalCenter = require('./routes/personalCenter');
+const config = require('./config.json');
 
-var app = express();
+const index = require('./routes/index');
+const login = require('./routes/login');
+const register = require('./routes/register');
+const personalCenter = require('./routes/personalCenter');
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -29,11 +31,11 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(session({
     store: new RedisStore({
-        host: "127.0.0.1",
-        port: 6379,
+        host: config.redis.host,
+        port: config.redis.port,
         ttl: 24 * 60 * 60 // session 有效期 1 天
     }),
-    genid: function(req) {
+    genid: function() {
         return uuid.v1();
     },
     secret: 'jellyfish',
@@ -54,7 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //     }
 // });
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/personalCenter', personalCenter);
@@ -71,7 +73,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function(err, req, res) {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -82,7 +84,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,

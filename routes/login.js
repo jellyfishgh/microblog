@@ -1,14 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../util/db').mysqlDB;
+const express = require('express');
+const router = express.Router();
+const db = require('../util/db').mysqlDB;
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     res.render('login', {
         title: 'login'
     });
 });
 
-router.post('/', function(req, res, next){
+router.post('/', function(req, res){
     var body = req.body;
     var username = body.username,
         password = body.password;
