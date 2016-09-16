@@ -7,16 +7,17 @@ block content
         form#myInfoForm
             p
                 label(for='username') 用户名：
-                input#username.username(type='text' name='username' value='#{username}' readonly)
+                input#username.username(type='text' name='username' value=username readonly)
             p
                 label(for='birthday') 出生日期：
-                input#birthday.birthday(type='date' name='birthday' placeholder='请输入你的出生日期' autofocus)
+                #calendar.calendar
+                //- input#birthday.birthday(type='date' name='birthday' placeholder='请输入你的出生日期' autofocus)
             p
                 label 性别：
                 input#sex.sex(type='radio')
             p
                 label 所在地：
-                input#location.location(type='select')
+                #location.location
         p
             button#finish.finish 完成
     script(src='/lib/requirejs.min.js' data-main='/javascripts/init')

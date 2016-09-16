@@ -95,7 +95,7 @@ define(function() {
         $('#finish').on('click', function(event) {
             toFinish();
         });
-        $(document).on('keydown', function(e) {
+        $(document).on('keydown', function(event) {
 
         });
     }

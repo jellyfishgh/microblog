@@ -4,9 +4,9 @@ block content
     link(rel='stylesheet', href='/stylesheets/index.css')
     h1= title
     p Welcome
-        a(href='/personalCenter/#{username}') #{username}
-        span  to #{title}
+        a(href=`/personalCenter/${username}`) #{username}
+        span to #{title}
     ul
-        - for link in links
+        for link in links
             li
-                a(href='#{link}') link
+                a(href=link) #{link}

@@ -1,7 +1,7 @@
 require.config({
     paths: {
         'jquery': '/lib/jquery.min',
-        'zepto':　'/lib/zepto.min'
+        'zepto': '/lib/zepto.min'
     },
     shim: {
         'zepto': {
@@ -10,15 +10,15 @@ require.config({
     }
 });
 require(['util'], function(util) {
-    if(util.isMobile()){
+    if (util.isMobile()) {
         require(['zepto'], handler);
-    }else{
+    } else {
         require(['jquery'], handler);
     }
 });
 
-function handler($){
-    require(['login', 'finish'], function(login, finish){
+function handler($) {
+    require(['login', 'finish'], function(login, finish) {
         login.init($);
         finish.init($);
     });

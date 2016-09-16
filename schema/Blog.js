@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var blogSchema = new Schema({
+module.exports = mongoose.model('Blog', new Schema({
     title: String,
     createTime: Date,
     author: Schema.Types.Mixed,
@@ -10,6 +10,4 @@ var blogSchema = new Schema({
     content: String,
     likes: Number,
     comments: [Schema.Types.Mixed]
-});
-
-module.exports = mongoose.model('Blog', blogSchema);
+}));

@@ -1,4 +1,4 @@
-var db = require('../db');
+var db = require('../util/db.js').mysqlDB;
 
 function select() {
     db.getConnection(function(err, connection) {

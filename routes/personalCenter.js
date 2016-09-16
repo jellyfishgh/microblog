@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../schema/User');
 
-router.get('/:username', function(req, res, next) {
+router.get('/:username', function(req, res) {
     if (req.session.username) {
         var uname = req.params.username;
         User.find({
@@ -38,7 +38,7 @@ router.get('/:username', function(req, res, next) {
     }
 });
 
-router.post('/', function(req, res, next) {
+router.post('/', function(req) {
     var body = req.body;
     User.set({
        username: body.username,
@@ -47,9 +47,9 @@ router.post('/', function(req, res, next) {
        location: {
            province: '',
            city: ''
-       } 
+       }
     }, function(err){
-        
+
     });
 });
 
