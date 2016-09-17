@@ -10,10 +10,10 @@ const uuid = require('node-uuid');
 
 const config = require('./config.json');
 
-const index = require('./routes/index');
-const login = require('./routes/login');
-const register = require('./routes/register');
-const personalCenter = require('./routes/personalCenter');
+// const index = require('./routes/index');
+// const login = require('./routes/login');
+// const register = require('./routes/register');
+// const personalCenter = require('./routes/personalCenter');
 
 const app = express();
 
@@ -56,10 +56,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 //     }
 // });
 
-app.use('/', index);
-app.use('/login', login);
-app.use('/register', register);
-app.use('/personalCenter', personalCenter);
+// app.use('/', index);
+// app.use('/login', login);
+// app.use('/register', register);
+// app.use('/personalCenter', personalCenter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
