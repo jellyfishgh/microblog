@@ -15,8 +15,10 @@ define(['yearSelectorHead'], function (YearSelectorHead) {
 
         var yearSelectorHead = new YearSelectorHead($, calendar, $yearList);
 
-        $yearSelector.append(yearSelectorHead);
+        $yearSelector.append(yearSelectorHead.init());
         $yearSelector.append($yearList);
+
+        return $yearSelector;
     }
     return {
         init: init

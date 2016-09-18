@@ -13,10 +13,11 @@ define(['monthSelectorHead'], function (MonthSelectorHead) {
         });
 
         var monthSelectorHead = new MonthSelectorHead($, calendar, $monthList);
-        monthSelectorHead.init();
 
-        $monthSelector.append(monthSelectorHead);
+        $monthSelector.append(monthSelectorHead.init());
         $monthSelector.append($monthList);
+
+        return $monthSelector;
     }
     return {
         init: init

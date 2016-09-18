@@ -29,6 +29,8 @@ define(function () {
         });
         $yearSelectorHead.append($nextYearArrow);
 
+        return $yearSelectorHead;
+
     };
     YearSelectorHead.prototype.update = function () {
         var calendar = this.calendar;
