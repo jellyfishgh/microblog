@@ -1,0 +1,43 @@
+html, body, div, span {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+}
+
+.location{
+    background-color: yellow;
+    margin-bottom: 20px;
+}
+.datepicker{
+    background-color: darkorange;
+    border: 1px solid black;
+    margin: auto;
+    padding: 5px;
+    width: 350px;
+}
+
+.head{
+    text-align: center;
+}
+
+.monthSelector, .yearSelector{
+    margin: 5px;
+}
+
+.monthSelector span, .yearSelector span{
+    margin: 5px;
+    cursor: pointer;
+}
+.monthSelector span:hover, .yearSelector span:hover{
+    background-color:rgba(200, 200, 200, 0.8);
+    color: white;
+}
+
+.month, .year{
+    width: 50%;
+    text-align: center;
+}
+
+.week{
+    text-align: center;
+}
