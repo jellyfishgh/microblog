@@ -1,43 +1,126 @@
-html, body, div, span {
+html,
+body,
+div,
+span {
     padding: 0;
     margin: 0;
     background-color: #fff;
 }
 
-.location{
-    background-color: yellow;
-    margin-bottom: 20px;
-}
-.datepicker{
-    background-color: darkorange;
+.datepicker {
     border: 1px solid black;
-    margin: auto;
     padding: 5px;
-    width: 350px;
+    width: 360px;
+    position: absolute;
+    left: 50px;
+    top: 100px;
 }
 
-.head{
+.head {
+    margin: auto;
+}
+
+.monthSelector,
+.yearSelector {
+    display: inline-block;
+    width: 120px;
+}
+
+.monthSelector {
+    margin-left: 50px;
+}
+
+.yearSelector {
+    margin-left: 20px;
+}
+
+.monthSelectorHead,
+.yearSelectorHead {
+    margin: 5px;
     text-align: center;
+    box-sizing: border-box;
+    border: 1px solid gray;
 }
 
-.monthSelector, .yearSelector{
-    margin: 5px;
-}
-
-.monthSelector span, .yearSelector span{
-    margin: 5px;
+.monthSelectorHead span,
+.yearSelectorHead span {
+    margin: 3px;
     cursor: pointer;
 }
-.monthSelector span:hover, .yearSelector span:hover{
-    background-color:rgba(200, 200, 200, 0.8);
+
+.monthSelectorHead span:hover,
+.yearSelectorHead span:hover {
+    background-color: rgba(200, 200, 200, 0.8);
     color: white;
 }
 
-.month, .year{
-    width: 50%;
-    text-align: center;
+.monthList,
+.yearList {
+    border: 1px solid black;
+    width: 120px;
+    margin: auto;
+    z-index: 1;
+    position: absolute;
 }
 
-.week{
+.month,
+.year {
+    width: 48%;
     text-align: center;
+    display: inline-block;
+    background-color: gray;
+    margin: 1%;
+}
+
+.month:hover,
+.year:hover {
+    background-color: darkgray;
+    color: white;
+    cursor: pointer;
+}
+
+.week div {
+    text-align: center;
+    background-color: gray;
+    margin: 2px 0;
+    margin-left: 2%;
+    width: 12%;
+    display: inline-block;
+}
+
+.week div:first-child,
+.week div:last-child {
+    background-color: darkgray;
+}
+
+.lineView div {
+    text-align: center;
+    margin: 2px 0;
+    margin-left: 2%;
+    width: 12%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.dayBeforeTheMonth, .dayAfterTheMonth {
+    background-color: #ddd;
+}
+
+.today{
+     color: red;
+}
+
+.selected {
+    background-color: yellow;
+}
+
+.lineView div:hover {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.lineView .dayInTheMonth:first-child,
+.lineView .dayInTheMonth:last-child {
+    background-color: darkgray;
 }

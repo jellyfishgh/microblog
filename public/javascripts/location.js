@@ -1,5 +1,5 @@
 define(['geo'], function (geo) {
-    function init($, id) {
+    function Location($, id){
         var $select1 = $('<select>'),
             $select2 = $('<select>'),
             $select3 = $('<select>');
@@ -37,7 +37,8 @@ define(['geo'], function (geo) {
             }
         }
     }
-    return {
-        init: init
+    Location.prototype.getOut = function(){
+        
     };
+    return Location;
 });

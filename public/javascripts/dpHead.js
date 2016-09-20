@@ -1,9 +1,8 @@
-define(['monthSelector', 'yearSelector', 'weekBanner'], function ($monthSelector, $yearSelector, $weekBanner) {
+define(['monthSelector', 'yearSelector'], function ($monthSelector, $yearSelector) {
     function init($, calendar) {
         var $head = $('<div>').addClass('head');
         $head.append($monthSelector.init($, calendar));
         $head.append($yearSelector.init($, calendar));
-        $head.append($weekBanner.init($, calendar.constructor.WEEK));
         return $head;
     }
     return {

@@ -3,19 +3,20 @@ define(function () {
         this.$ = $;
         this.calendar = calendar;
         this.$selectedYear = $('<span>').text(calendar.date.getFullYear()).click(function () {
-            $yearList.toggle('normal');
+            $yearList.fadeToggle('normal');
         });
     }
     YearSelectorHead.prototype.init = function () {
         var $ = this.$, calendar = this.calendar, $selectedYear = this.$selectedYear;
 
-        var $yearSelectorHead = $('<span>').addClass('yearSelectorHead');
+        var $yearSelectorHead = $('<div>').addClass('yearSelectorHead');
 
         var $lastYearArrow = $('<span>').text('<');
         $lastYearArrow.click(function () {
             calendar.date = calendar.lastYear();
-            calendar.updateDaysView();
-            $selectedYear.text(calendar.date.getFullYear());
+            // calendar.updateDaysView();
+            // $selectedYear.text(calendar.date.getFullYear());
+            calendar.updateView();
         });
         $yearSelectorHead.append($lastYearArrow);
 
@@ -24,8 +25,9 @@ define(function () {
         var $nextYearArrow = $('<span>').text('>');
         $nextYearArrow.click(function () {
             calendar.date = calendar.nextYear();
-            calendar.updateDaysView();
-            $selectedYear.text(calendar.date.getFullYear());
+            // calendar.updateDaysView();
+            // $selectedYear.text(calendar.date.getFullYear());
+            calendar.updateView();
         });
         $yearSelectorHead.append($nextYearArrow);
 

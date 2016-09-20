@@ -1,10 +1,11 @@
-define(['datepicker', 'location'], function(datepicker, location) {
+define(['datepicker', 'location'], function(DatePicker, Location) {
     function init($) {
-        datepicker.init($, '#datepicker');
-        location.init($, '#location');
+        var datepicker = new DatePicker($, '#datepicker');
+        var location = new Location($, '#location');
         $('#finish').click(toFinish);
         function toFinish(){
-
+            console.log(datepicker.getOut());
+            console.log(location.getOut());
         }
     }
     return {

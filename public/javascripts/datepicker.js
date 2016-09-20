@@ -1,13 +1,16 @@
-define(['Calendar', 'dpHead', 'dpDays'], function(Calendar, dpHead, DpDays){       
-    function init($, id){
-        var calendar = new Calendar();
-        var $dateView = $('<div>');
-        var dpDays = new DpDays($, calendar, $dateView);
+define(['Calendar', 'dpHead', 'weekBanner', 'dpDays'], function (Calendar, dpHead, $weekBanner, DpDays) {
+    function DatePicker($, id) {
+        var calendar = new Calendar(new Date());
+        var dpDays = new DpDays($, calendar);
+        dpDays.init();
         calendar.setDpDays(dpDays);
         $(id).append(dpHead.init($, calendar));
-        $(id).append($dateView);
+        $(id).append($weekBanner.init($, calendar.constructor.WEEK));
+        $(id).append(dpDays.$dateView);
+        this.calendar = calendar;
     }
-    return {
-        init: init
+    DatePicker.prototype.getOut = function () {
+        return this.calendar.date;
     };
+    return DatePicker;
 });

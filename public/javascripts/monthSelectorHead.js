@@ -3,7 +3,7 @@ define(function () {
         this.$ = $;
         this.calendar = calendar;
         this.$selectedMonth = $('<span>').text(calendar.constructor.MONTH[calendar.date.getMonth()]).click(function () {
-            $monthList.toggle('normal');
+            $monthList.fadeToggle('slow');
         });
     }
     MonthSelectorHead.prototype.update = function () {
@@ -12,13 +12,15 @@ define(function () {
     };
     MonthSelectorHead.prototype.init = function () {
         var $ = this.$, calendar = this.calendar, $selectedMonth = this.$selectedMonth;
-        var $monthSelectorHead = $('<span>').addClass('monthSelectorHead');
+        var $monthSelectorHead = $('<div>').addClass('monthSelectorHead');
 
         var $lastMonthArrow = $('<span>').text('<');
         $lastMonthArrow.click(function () {
             calendar.date = calendar.lastMonth();
-            calendar.updateDaysView();
-            $selectedMonth.text(calendar.constructor.MONTH[calendar.date.getMonth()]);
+            // calendar.updateDaysView();
+            // calendar.updateYearSelectorHead();
+            // $selectedMonth.text(calendar.constructor.MONTH[calendar.date.getMonth()]);
+            calendar.updateView();
         });
         $monthSelectorHead.append($lastMonthArrow);
 
@@ -26,9 +28,11 @@ define(function () {
 
         var $nextMonthArrow = $('<span>').text('>');
         $nextMonthArrow.click(function () {
-            calendar.date = calendar.lastMonth();
-            calendar.updateDaysView();
-            $selectedMonth.text(calendar.constructor.MONTH[calendar.date.getMonth()]);
+            calendar.date = calendar.nextMonth();
+            // calendar.updateDaysView();
+            // calendar.updateYearSelectorHead();
+            // $selectedMonth.text(calendar.constructor.MONTH[calendar.date.getMonth()]);
+            calendar.updateView();
         });
         $monthSelectorHead.append($nextMonthArrow);
 
