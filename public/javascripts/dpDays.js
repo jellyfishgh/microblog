@@ -15,7 +15,7 @@ define(function () {
                 if (d.ext === 1) $day.addClass('dayInTheMonth');
                 else if (d.ext === 2) $day.addClass('dayAfterTheMonth');
                 // ? 选中的效果不完善，点击周末的时候跳转月份时不会被选中
-                if(d.ext ===1 && d.value === calendar.date.getDate()) {
+                if(d.ext === 1 && d.value === calendar.date.getDate()) {
                     $day.addClass('selected');
                 }
                 if (d.value === calendar.constructor.TODAY) {
@@ -28,6 +28,7 @@ define(function () {
                         else if (d.ext === 2) calendar.date = calendar.nextMonth();
                         calendar.date.setDate(d.value);
                         calendar.updateView();
+                        // console.log(`ext: ${d.ext}, value: ${d.value}, date: ${calendar.date.getDate()}`);
                     };
                 } (d));
                 $lineView.append($day);

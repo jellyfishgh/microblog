@@ -11,9 +11,17 @@ span {
     border: 1px solid black;
     padding: 5px;
     width: 360px;
-    position: absolute;
+    /*position: absolute;
     left: 50px;
-    top: 100px;
+    top: 100px;*/
+}
+
+.date {
+    margin: auto;
+    text-align: center;
+}
+.date:hover {
+    cursor: pointer;
 }
 
 .head {
@@ -112,7 +120,7 @@ span {
 }
 
 .selected {
-    background-color: yellow;
+    border-radius: 50%;
 }
 
 .lineView div:hover {

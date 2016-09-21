@@ -16,6 +16,9 @@ define(function () {
             weekIndex: (k + d - 1) % weekLength
         };
     };
+    Calendar.prototype.formateDate = function() {
+        return `${this.date.getFullYear()}/${this.date.getMonth() + 1}/${this.date.getDate()}`;
+    };
     Calendar.prototype.isLeapYear = function () {
         var year = this.date.getFullYear();
         return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
@@ -108,11 +111,9 @@ define(function () {
             };
             j--;
         }
-
         return month;
     };
     Calendar.prototype.updateView = function () {
-        console.log(this.date.toLocaleString());
         this.updateMonthSelectorHead();
         this.updateYearSelectorHead();
         this.updateDaysView();
