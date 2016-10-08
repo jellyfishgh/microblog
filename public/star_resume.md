@@ -2,17 +2,19 @@
 
 ## 基本信息
 
-<img src='http://7xq0r0.com1.z0.glb.clouddn.com/me1.jpg' width='135' height='180' style='position:absolute;right:340px;top:120px;'/>
+<img src='http://7xq0r0.com1.z0.glb.clouddn.com/me1.jpg' width='135' height='180' style='position:absolute;right:250px;top:220px;'/>
 
 何睦 25岁
 
-<span style='color:#ccc;'>手机号：</span>13268296634 <span style='color:#ccc;'>邮箱地址：</span>oochoo@live.com
+<span style='color:#999;'>手机号：</span>13268296634
 
-<span style='color:#ccc;'>GitHub：</span><https://github.com/jellyfishgh>
+<span style='color:#999;'>邮箱地址：</span>oochoo@live.com
 
-<span style='color:#ccc;'>教育：</span>2010.9-2014.7 中南大学 信息管理与信息系统 本科
+<span style='color:#999;'>GitHub：</span><https://github.com/jellyfishgh>
 
-<span style='color:#ccc;'>工作：</span>2014.7-2016.9 多益网络 策划
+<span style='color:#999;'>教育：</span>2010.9-2014.7 中南大学 信息管理与信息系统 本科
+
+<span style='color:#999;'>工作：</span>2014.7-2016.9 多益网络 策划
 
 ## 项目经历
 
