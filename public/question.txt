@@ -1,0 +1,25 @@
+问题
+为什么离开现在的工作？
+除了JS及JS的框架，最擅长的三种语言或技术依次是？
+最满意和最不满意的任务/项目，为什么？
+
+技术问题，主要看思路，简洁易懂就好（每题100-200字，别copy paste大段文章）：
+简单编程题，写JS或伪代码
+Please write a function which takes three numbers as arguments and returns the sum of two larger numbers. (Write as elegant as possible, DO NOT use predefined method)
+
+简单编程题，写JS或伪代码
+const orgData = [
+{ name: 'abc', age: 30, score: 90, sex: 1, lesson: 'math' },
+{ name: 'def', age: 31, score: 80, sex: 1, lesson: 'math' },
+{ name: 'lmn', age: 27, score: 70, sex: 0, lesson: 'math' },
+{ name: 'xyz', age: 30, score: 80, sex: 1, lesson: 'english' }
+];
+Please write two functions to do following actions for this data set.
+return an array contains all data that (age > a given certain value)
+return an object shows the average scores group by ’lesson’ and ‘sex’
+
+简单讲讲git的多人工作协作流程。当多人对多个模块有改动的时候，如何解决冲突？另外，如何避免这种冲突出现？
+
+最喜欢的ES6（ECMAScript 6）的三个改变？为什么？比ES5简单多少？
+
+有没有用过ReactJS/Redux框架？若有，简单描述一下和AngularJS相比的优缺点？若没有，你觉得在一点的指导下（不是完全手把手指导，但提供一个git project），你能多久上手ReactJS/Redux？简单讲讲你的学习计划
