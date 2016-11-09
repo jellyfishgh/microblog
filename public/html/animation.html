@@ -2,3 +2,33 @@
 写一个无限循环转动的动画
 温习 sw_new.html里面的加载动画实现
  -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>animation - 动画</title>
+        <style media="screen">
+            div {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-right: -50%;
+                background-color: red;
+                animation: .85s rotate-move steps(24) infinite;
+            }
+            @keyframes rotate-move {
+                0% {
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+                100% {
+                    transform: translate(-50%, -50%) rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
