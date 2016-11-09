@@ -1,0 +1,38 @@
+<!--
+响应'停止滚动'事件
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>scroll</title>
+        <style media="screen">
+            .container {
+                width: 500px;
+                height: 500px;
+                background-color: red;
+                overflow: scroll;
+            }
+            .content {
+                width: 300px;
+                height: 10000px;
+                background: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div class="content" id="content"></div>
+        </div>
+        <script type="text/javascript">
+            var container = document.querySelector('#container');
+            var timer;
+            container.addEventListener('scroll', function(e) {
+                if(timer) clearTimeout(timer);
+                timer = setTimeout(function(){
+                    console.log("停止滚动的事件发生了。。。");
+                }, 1000);
+            });
+        </script>
+    </body>
+</html>
