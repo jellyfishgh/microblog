@@ -1,6 +1,6 @@
-# 何睦_Web开发工程师
+### 何睦_前端开发工程师
 
-## 基本信息
+#### 基本信息
 
 **何睦** 男 25岁 湖北黄冈
 
@@ -12,7 +12,7 @@ GitHub：<https://github.com/jellyfishgh>
 
 <img src='http://7xq0r0.com1.z0.glb.clouddn.com/me1.jpg' width='105' height='140' style='position:absolute;right:240px;top:185px;'/>
 
-## 工作经历
+#### 工作经历
 
 2014.7-2016.9 多益网络 **策划**
 
@@ -44,7 +44,7 @@ eg：[神武2更新日志](<http://wzupdate.duoyi.com/sw_new.html>)
 1. 最后只能采用前端 JS 解析渲染的方案，于是给所有游戏都分别写了 html文件，内联 JS 和 CSS，并让游戏策划把 html 文件通过 SVN 放置在 txt 文件的同一路径下来解决浏览器跨域访问的限制；
 1. 通过 Ajax 请求 txt 文件，使用 Blob 实现 GBK 转 UTF-8，前端 JS 复用 Node 中解析渲染 DOM 的算法；
 
-## 技能简述
+#### 技能简述
 
 - 熟悉 Stack，HashMap 等常用数据结构及其实现原理；
 - 熟悉快速排序，二分查找等常用算法；
@@ -56,7 +56,7 @@ eg：[神武2更新日志](<http://wzupdate.duoyi.com/sw_new.html>)
 - 熟悉 jQuery 和 Zepto，了解 Bootstrap；
 - 熟练使用 Git 和 Linux(Ubuntu)；
 
-## 个人说明
+#### 个人说明
 
 两年前，作为一个应届毕业生，以策划助理的岗位踏入职场。在查阅需求挖掘与用户体验方面的资料时发现了 Taobao UED，一步一步地学习他人分享的技术时，自己慢慢进入到了 Web 开发的领域，进而迷恋上了 Node/JS。
 
