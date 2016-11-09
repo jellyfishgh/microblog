@@ -3,8 +3,32 @@
     <head>
         <meta charset="utf-8">
         <title>transition - 过渡</title>
+        <style media="screen">
+            .box {
+                border-style: solid;
+                border-width: 1px;
+                display: block;
+                width: 100px;
+                height: 150px;
+                background-color: blue;
+                transition: width 2s, height 1s, background-color 5s, transform 3s;
+            }
+            .box:hover {
+                background-color: #ffcccc;
+                width: 200px;
+                height: 100px;
+                transform: rotate(180deg);
+            }
+        </style>
     </head>
     <body>
-
+        <div class="box" id="box"></div>
+        <button onclick="foo()">改变box的宽度</button>
+        <script type="text/javascript">
+            var box = document.querySelector('#box');
+            function foo() {
+                box.style.width = "300px";
+            }
+        </script>
     </body>
 </html>
