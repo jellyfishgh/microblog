@@ -1,4 +1,70 @@
 <!--
 1.ajax 取消请求的方法
 2.搜索时请求的间隔
+3. http://yujiangshui.com/javascript-levenshtein-distance/
 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>search</title>
+    </head>
+    <body>
+        <input type="text" name="search" id="search" placeholder="百度一下，你就知道">
+        <button type="button" name="button" id="btn">搜索</button>
+        <ul id="recommend"></ul>
+        <script type="text/javascript">
+            var btn = document.querySelector('#btn');
+            var searchInput = document.querySelector('#search');
+            var recommendUl = document.querySelector('#recommend');
+            btn.addEventListener('click', function(e) {
+                getResult(`/search?q=${searchInput.value}`);
+            });
+            var timer;
+            var xhr;
+            var responsed = false;
+            searchInput.addEventListener('input', function(e) {
+                // if(timer) clearTimeout(timer);
+                // timer = setTimeout(function() {
+                //     if(!responsed && xhr) xhr.abort();
+                //     getResult(`/search?q=${searchInput.value}`);
+                // }, 500);
+
+                if(!responsed && xhr) xhr.abort();
+                getResult(`/search?q=${searchInput.value}`);
+            });
+            function getResult(url) {
+                responsed = false;
+                xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.timeout = 4000;
+                xhr.responseType = 'json';
+                xhr.onload = function() {
+                    responsed = true;
+                    showResult(xhr.response);
+                }
+                xhr.ontimeout = function() {
+                    responsed = true;
+                    showErr('请求超时，请稍后重试');
+                }
+                xhr.onerror = function(e) {
+                    responsed = true;
+                    showErr(e.target.status);
+                }
+                xhr.send();
+            }
+            function showResult(result) {
+                var lis = [];
+                result.map(function(item) {
+                    lis.push(`<li><a target='_blank' href='/html/${item}'>${item}</a></li>`);
+                });
+                recommendUl.innerHTML = lis.join('');
+            }
+            function showErr(err) {
+                var err = `<li>${err}</li>`
+                recommendUl.innerHTML = err;
+            }
+        </script>
+    </body>
+</html>

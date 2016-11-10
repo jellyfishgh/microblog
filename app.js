@@ -14,6 +14,7 @@ const config = require('./config.json');
 // const login = require('./routes/login');
 // const register = require('./routes/register');
 // const personalCenter = require('./routes/personalCenter');
+const search = require('./routes/search');
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/login', login);
 // app.use('/register', register);
 // app.use('/personalCenter', personalCenter);
+app.use('/search', search);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
